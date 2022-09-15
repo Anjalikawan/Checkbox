@@ -1,0 +1,35 @@
+html{
+    background: #ada;
+}
+.check{
+    margin: 30px auto;
+    max-width: 300px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 5px 5px #131a1859;
+}
+.demo{
+    align-items: center;
+    border-bottom: 1px solid white;
+    display: flex;
+}
+.demo:last-child{
+    border-bottom: 0;
+}
+input:checked + p{
+    background: white;
+    text-decoration: line-through;
+}
+input[type="checkbox"]{
+    margin: 20px;
+}
+p{
+    margin: 0;
+    padding: 20px;
+    font-family: 'Courier New, Courier, monospace';
+    font-size: 20px;
+    font-weight: 200;
+    border-left: 1px solid #D1e2ff;
+    transition: 0.2s;
+    flex: 1;
+}

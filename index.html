@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Multiple CheckBoxes</title>
+</head>
+<body>
+    <div class="check">
+        <div class="demo">
+            <input type="checkbox">
+            <p> Best of Luck!</p>
+        </div>
+        <div class="demo">
+            <input type="checkbox">
+            <p> Good Morning!</p>
+        </div>
+        <div class="demo">
+            <input type="checkbox">
+            <p>Check the Unbox</p>
+        </div>
+        <div class="demo">
+            <input type="checkbox">
+            <p>Try Next Years</p>
+        </div>
+        <div class="demo">
+            <input type="checkbox">
+            <p> Try to do it without any libraries</p>
+        </div>
+        <div class="demo">
+            <input type="checkbox">
+            <p> Don't forget  yours impotant day</p>
+        </div>
+    </div>
+
+    <script>
+        //getting the parent container of all the checkbox inputs and get all check box
+        const inputs = document.querySelectorAll('.check input[type = "checkbox"]'); 
+        //inputs.style.pointerEvent = "none";
+        
+        let lastData;
+        function outputCheck(event){
+           // let out = false;
+           // shift Key check down  keyborad
+           let betweendata = false;
+           if(window.event.shiftKey && this.checked){
+            //console.log('hy')
+            
+            inputs.forEach(items => {
+                console.log(items)
+                if(items === this || items === lastData){
+                    betweendata =!betweendata;
+                    console.log('check them');
+
+                }
+                
+                if(betweendata){
+                    items.checked = true;
+                }
+            })
+           }
+           
+                
+            
+            lastData = this; 
+            // console.log(lastData.length)                                                                                                                                                 
+        }
+
+        inputs.forEach(items => items.addEventListener('click', outputCheck));
+    </script>
+    
+</body>
+</html>
